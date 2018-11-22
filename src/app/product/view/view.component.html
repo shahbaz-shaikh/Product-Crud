@@ -1,0 +1,54 @@
+
+<section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>PRODUCT/VIEW</h2>
+            </div>
+      
+            <!-- Basic Table -->
+            <div class="row clearfix">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="card">
+                      <div class="header">
+                          <h2>
+                              Product TABLES
+                          </h2>
+                      </div>
+                      <div class="body table-responsive">
+                          <table class="table">
+                              <tbody>
+                                  <tr class="primary">
+                                      <th>ID</th>
+                                      <th>Product Name</th>
+                                      <th>Description</th>
+                                      <th>Date</th>
+                                      <th>Price</th>
+                                      <th>Action</th>
+                                  </tr>
+                              </tbody>
+                              <tbody>
+                                  <tr *ngFor='let product of products'>
+                                      <th>{{product.id}}</th>
+                                      <td>{{product.name}}</td>
+                                      <td>{{product.description}}</td>
+                                      <td>{{product.date | date}}</td>
+                                      <td>{{product.price}}</td>
+                                      <td>
+                                        <button routerLink='/product/edit/{{product.id}}' type="button" class="btn btn-danger waves-effect">
+                                            <i class="material-icons">edit</i>
+                                        </button> &nbsp; &nbsp;
+                                        <button (click)='deleteProduct(product.id)' type="button" class="btn bg-purple waves-effect">
+                                            <i class="material-icons">delete</i>
+                                        </button>
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- #END# Basic Table -->
+      
+        </div>
+      </section>

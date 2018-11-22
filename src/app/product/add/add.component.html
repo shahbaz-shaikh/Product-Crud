@@ -1,0 +1,112 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>PRODUCT/ADD</h2>
+        </div>
+        
+    <!-- Horizontal Layout -->
+    <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Add Product
+                        </h2>
+                    </div>
+                    <div class="body">
+                    <form class="form-horizontal" [formGroup]="productForm" (ngSubmit)="onSubmit()" novalidate>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    <label for="email_address_2">Product Name:-</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" formControlName="name" id="name" class="form-control" placeholder="Enter Product Name">
+                                            
+                                            <div *ngIf="(productForm.get('name').touched || productForm.get('name').dirty ) && productForm.get('name').errors" class="alert alert-danger">
+                                                <div *ngIf="productForm.get('name').errors.required">
+                                                  Required Product Name cannot be left blank.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Description:-</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" formControlName="description" id="description" class="form-control" placeholder="Enter Product Description">
+                                                
+                                                <div *ngIf="(productForm.get('description').touched || productForm.get('description').dirty ) && productForm.get('description').errors" class="alert alert-danger">
+                                                    <div *ngIf="productForm.get('description').errors.required">
+                                                      Required Product Description cannot be left blank.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Date:-</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="date" formControlName="date" id="date" class="form-control" placeholder="Select Date">
+                                                
+                                                <div *ngIf="(productForm.get('date').touched || productForm.get('date').dirty ) && productForm.get('date').errors" class="alert alert-danger">
+                                                    <div *ngIf="productForm.get('date').errors.required">
+                                                      Required Date cannot be left blank.
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Price:-</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="number" formControlName="price" id="price" class="form-control" placeholder="Enter Product Price">
+
+                                                <div *ngIf="(productForm.get('price').touched || productForm.get('price').dirty ) && productForm.get('price').errors" class="alert alert-danger">
+                                                    <div *ngIf="productForm.get('price').errors.required">
+                                                      Required Product Price cannot be left blank.
+                                                    </div>
+                                                    <div *ngIf="productForm.get('price').errors.pattern">
+                                                        Accept only Numeric value in Product Price.
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
+                                    <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary m-t-15 waves-effect">Add Product</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Horizontal Layout -->
+  
+    </div>
+  </section>
